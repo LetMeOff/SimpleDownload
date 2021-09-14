@@ -3,9 +3,7 @@ package com.zjh.simpledownload
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zjh.download.SimpleDownload
-import com.zjh.download.core.DownloadConfig
-import com.zjh.download.core.DownloadParam
-import com.zjh.download.download
+import com.zjh.download.utils.download
 import com.zjh.download.helper.State
 import com.zjh.download.utils.logD
 import kotlinx.coroutines.CoroutineScope
@@ -43,11 +41,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun download(downloadUrl: String, saveName: String) {
         //创建下载任务
+//        val downloadTask = lifecycleScope.download(downloadUrl)
+
         val downloadTask = scope.download(downloadUrl)
+
 //        val downloadTask = scope.download(downloadUrl, saveName, savePath)
+
         //自定义参数
-//        val params = DownloadParam("")
-//        val downloadTask = scope.download(params)
+//        val params = DownloadParam(downloadUrl, saveName, savePath)
+//        val config = DownloadConfig()
+//        config.baseUrl = "http://www.example.com"
+//        val downloadTask = scope.download(params,config)
 
         //状态监听
         downloadTask.state().onEach {

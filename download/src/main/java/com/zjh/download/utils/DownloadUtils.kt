@@ -1,10 +1,9 @@
-package com.zjh.download
+package com.zjh.download.utils
 
 import com.zjh.download.core.DownloadParam
 import com.zjh.download.core.DownloadTask
 import com.zjh.download.core.DownloadConfig
 import com.zjh.download.helper.Default
-import com.zjh.download.utils.logD
 import kotlinx.coroutines.CoroutineScope
 
 
